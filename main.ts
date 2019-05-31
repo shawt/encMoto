@@ -1,4 +1,6 @@
+
 //% color="#AA278D"
+
 enum motorChoice {
     //% block="left"
     Left,
@@ -17,6 +19,23 @@ enum motorDir {
     sp
 }
 
+enum encPin {
+    //% block="P0"
+    p0,
+    //% block=P1"
+    p1,
+    //% block="P2"
+    p2,
+    //% block="P8"
+    p8,
+    //% block="P12"
+    p12,
+    //% blcok="P14"
+    p14
+}
+
+
+
 namespace motoBit {
     /**
 	 * Sets the speed and direction of either the left motor or the right motor.
@@ -26,20 +45,15 @@ namespace motoBit {
 	 */
  
 
-    /**
-     * A function that returns a non-void argument generates a reporter block (oval shape).
-     */
-    //% block
-    export function expression(): number {
-        return 0;
-    }
 
    
     /**
      * When a function has many arguments, it switches to a vertical layout
      */
-    //% blockID="encodedMotor" block="Encoded Motor|Enc:Wheel Ratio $ratio |Motor $mc | Direction $dir | to low $toLow|high $toHigh"
-    export function drive(ratio: number, mc: motorChoice, dir: motorDir, arg4: number, arg5: number) {
+    //% blockID="encodedMotor" block="Encoded Motor|Enc:Wheel Ratio $ratio Lenc $le Renc $re Motor $mc Direction $dir Speed $sp Rotations $rt"
+    //% ratio.defl=48
+    //% sp.defl=50
+    export function drive(ratio: number, le: encPin, re: encPin, mc: motorChoice, dir: motorDir, sp: number, rt: number) {
 
     }
 
